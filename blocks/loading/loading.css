@@ -1,0 +1,37 @@
+/* style loading */
+
+.loading {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loading::before {
+    animation: 1.5s linear infinite spinner;
+    animation-play-state: inherit;
+    border: solid 5px var(--highlight-background-color);
+    border-bottom-color: var(--link-color);
+    border-radius: 50%;
+    content: "";
+    height: 40px;
+    transform: translate3d(-50%, -50%, 0);
+    width: 40px;
+    will-change: transform;
+  }
+  
+  @keyframes spinner {
+    0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+  
+    100% {
+      transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+  }
