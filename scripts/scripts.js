@@ -9,6 +9,7 @@ import {
   loadCSS,
   loadFooter,
   loadHeader,
+  loadScript,
   sampleRUM,
   waitForLCP,
 } from './aem.js';
@@ -84,6 +85,10 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
+  // const { pathname } = new URL(window.location.href);
+  // if (pathname === '/checkout') {
+    await loadScript('https://js.stripe.com/v3/');
+  // }
   await initializeDropins();
   decorateTemplateAndTheme();
 
